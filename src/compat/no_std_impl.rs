@@ -29,5 +29,6 @@ pub fn has_neon() -> bool {
 
 #[cfg(target_arch = "wasm32")]
 pub fn has_simd128() -> bool {
-    true
+    // Wasm has no runtime feature detection; the target feature decides.
+    cfg!(target_feature = "simd128")
 }

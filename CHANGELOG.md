@@ -13,6 +13,13 @@
   This provides an additional 5-10% reduction in `f32` convolution benchmark
   times.
 
+### Fixed
+
+- `CpuExtensions::Simd128` is now only reported as supported (and selected by
+  default) when the crate is built with the `simd128` target feature. Previously
+  it was always selected on `wasm32`, emitting SIMD instructions into builds that
+  had not enabled the feature.
+
 ## [6.1.0] - 2026-07-21
 
 ### Changed
